@@ -12,3 +12,4 @@
 *.out
 /go/
 /src/
+/home/.bash_history
