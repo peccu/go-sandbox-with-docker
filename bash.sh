@@ -13,4 +13,4 @@ https://medium.com/@diogok/on-golang-static-binaries-cross-compiling-and-plugins
 
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -tags netgo -installsuffix netgo -ldflags '-s -w -extldflags "-static" -linkmode external'
 EOF
-docker run -v $PWD/home:/root -v $PWD/go:/go -v $PWD/src:/src --rm -it golang bash
+docker run -v $PWD/home:/root -v $PWD/go:/go -v $PWD/src:/src/$(basename $PWD) -w /src/$(basename $PWD) --rm -it golang bash
